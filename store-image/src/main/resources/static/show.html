@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+<body>
+    <img id="image" src="" alt="Image">
+    <script>
+        fetch('http://localhost:8080/images/65d2e649f50d5d02796a654a')
+            .then(response => response.blob())
+            .then(blob => {
+                const url = URL.createObjectURL(blob);
+                document.getElementById('image').src = url;
+            });
+    </script>
+</body>
+</html>
